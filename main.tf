@@ -3,9 +3,11 @@ data "oci_identity_availability_domains" "ads" {
 }
 
 module "vcn" {
-  source         = "./modules/vcn"
-  compartment_id = var.compartment_id
+  source              = "./modules/vcn"
+  compartment_id      = var.compartment_id
   availability_domain = data.oci_identity_availability_domains.ads.availability_domains[0].name
+  vcn_cidr_block      = var.vcn_cidr_block
+  subnet_cidr_block   = var.subnet_cidr_block
 }
 
 module "compute" {
