@@ -17,3 +17,8 @@ variable "subnet_cidr_block" {
   description = "The CIDR block for the subnet"
   type        = string
 }
+
+variable "security_list_id" {
+  description = "The ID of the security list to attach to the subnet"
+  type        = string
+}

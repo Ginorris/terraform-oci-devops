@@ -31,7 +31,6 @@ variable "region" {
 variable "ssh_public_key" {
   description = "Path to your SSH public key"
   type        = string
-  default     = "~/.ssh/id_rsa.pub"
 }
 
 variable "vcn_cidr_block" {
@@ -44,4 +43,9 @@ variable "subnet_cidr_block" {
   description = "The CIDR block for the subnet"
   type        = string
   default     = "10.0.1.0/24"
+}
+
+variable "allowed_ssh_ip" {
+  description = "The IP allowed to SSH into the instance"
+  type        = string
 }
